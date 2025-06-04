@@ -15,9 +15,8 @@ class ControladorUsuarios{
                     var_dump($respuesta); // Verifica la respuesta de la consulta
                     
                 if ($respuesta) {
-                    // Si la contraseña está hasheada en la BD, usa password_verify
-                    // if (password_verify($_POST["ingPassword"], $respuesta["clave"]) && $respuesta["estado"] == "activo") {
-                    if ($respuesta["clave"] == $_POST["ingPassword"] && $respuesta["estado"] == "Activo") {
+               
+                    if ($respuesta["email"] == $_POST["ingEmail"] && $respuesta["clave"] == $_POST["ingPassword"] && $respuesta["estado"] == "Activo") {
 
                         $_SESSION["iniciarSesion"] = "ok";
                         $_SESSION["ID_usuarios"] = $respuesta["ID_usuarios"];
