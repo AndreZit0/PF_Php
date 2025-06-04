@@ -4,21 +4,19 @@ require_once "conexion.php";
 
 class ModeloUsuarios{
 
-    static public function mdlMostrarUsuarios($tabla, $item, $valor){
-        $conexion = Conexion::conectar();
+    static public function mdlMostrarUsuarios($tabla,$item,$valor){
+        
+        $conexion=Conexion::conectar();
 
-        $stmt = $conexion->prepare("SELECT * FROM $tabla WHERE email = :email ");
-        $stmt->bindParam(":email", $valor, PDO::PARAM_STR);
+        $stmt=$conexion->prepare("SELECT * FROM $tabla WHERE email = :email");
 
-        $stmt-> execute();
+        $stmt->bindParam(":email",$valor, PDO::PARAM_STR);
+
+        $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
 
         $stmt->close();
-        $stmt = null;
-
-
-
+        $stmt=null;
     }
 
-
-}//FIN CLASE ModeloUsuarios
+}//FIN DE LA CLASE MODELO USUARIOS

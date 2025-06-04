@@ -15,10 +15,10 @@ class ControladorUsuarios{
                     if ($respuesta["email"] == $_POST["ingEmail"] && $respuesta["clave"]==$_POST["ingPassword"] && $respuesta["estado"]=="activo"){
 
                         $_SESSION["iniciarSesion"] = "ok";
-                        $_SESSION["idUsuario"]=$respuesta["idusuarios"];
+                        $_SESSION["ID_usuarios"]=$respuesta["ID_usuarios"];
                         $_SESSION["nombres"]=$respuesta["nombres"];
                         $_SESSION["apellidos"]=$respuesta["apellidos"];
-                        $_SESSION["idRol"]=$respuesta["rol_idrol"];
+                        $_SESSION["ID_rol"]=$respuesta["ID_rol"];
 
                     }
 
